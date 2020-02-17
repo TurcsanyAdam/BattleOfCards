@@ -9,14 +9,14 @@ namespace BattleOfCardsAPI
     public class Initializer
     {
         private string filePathCardGame = "CardGame.xml";
-        public List<Card> Cards = new List<Card>();
+        
 
         public Initializer()
         {
             DeserializerCards();
         }
         // Deserializes Cards from XML
-        public void DeserializerCards()
+        public List<Card> DeserializerCards()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Card>), new XmlRootAttribute("Cards"));
 
@@ -24,8 +24,12 @@ namespace BattleOfCardsAPI
             {
                 using (FileStream fs = File.OpenRead(filePathCardGame))
                 {
-                    Cards = (List<Card>)serializer.Deserialize(fs);
+                    return (List<Card>)serializer.Deserialize(fs);
                 }
+            }
+            else
+            {
+                throw new FileNotFoundException("The file is doesn't exist");
             }
 
         }
