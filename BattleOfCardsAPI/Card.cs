@@ -7,11 +7,11 @@ namespace BattleOfCardsAPI
     [Serializable]
     public class Card : ISerializable
     {
-        public string Name { get; private set; }
-        public int Coding { get; private set; }
-        public int Gaming { get; private set; }
-        public int SoftSkills { get; private set; }
-        public double CoffeeConsumption { get; private set; }
+        public string Name { get; set; }
+        public int Coding { get; set; }
+        public int Gaming { get; set; }
+        public int SoftSkills { get; set; }
+        public double CoffeeConsumption { get; set; }
 
         // Initializes Card
         public Card(string name, int coding, int gaming, int softSkills, double coffeeConsumption)

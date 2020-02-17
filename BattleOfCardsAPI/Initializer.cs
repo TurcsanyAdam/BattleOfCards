@@ -6,21 +6,25 @@ using System.Xml.Serialization;
 
 namespace BattleOfCardsAPI
 {
-    class Initializer
+    public class Initializer
     {
-        private string filePathCardGame = @"..\\..\\..\\CardGame.xml";
-        private List<Card> listOfCards = new List<Card>();
+        private string filePathCardGame = "CardGame.xml";
+        public List<Card> Cards = new List<Card>();
 
+        public Initializer()
+        {
+            DeserializerCards();
+        }
         // Deserializes Cards from XML
         public void DeserializerCards()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Card>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Card>), new XmlRootAttribute("Cards"));
 
             if (File.Exists(filePathCardGame) && new FileInfo(filePathCardGame).Length > 0)
             {
                 using (FileStream fs = File.OpenRead(filePathCardGame))
                 {
-                    listOfCards = (List<Card>)serializer.Deserialize(fs);
+                    Cards = (List<Card>)serializer.Deserialize(fs);
                 }
             }
 

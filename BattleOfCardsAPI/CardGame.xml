@@ -1,0 +1,170 @@
+<Cards>
+  <Card>
+    <Name>Biró Bálint</Name>
+    <Coding>7</Coding>
+    <Gaming>3</Gaming>
+    <SoftSkills>5</SoftSkills>
+    <CoffeeConsumption>1.2</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Borbély Ádám</Name>
+    <Coding>5</Coding>
+    <Gaming>6</Gaming>
+    <SoftSkills>6</SoftSkills>
+    <CoffeeConsumption>0.6</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Csöndes Ádám</Name>
+    <Coding>8</Coding>
+    <Gaming>4</Gaming>
+    <SoftSkills>8</SoftSkills>
+    <CoffeeConsumption>1.0</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Dankó Gergő</Name>
+    <Coding>5</Coding>
+    <Gaming>5</Gaming>
+    <SoftSkills>5</SoftSkills>
+    <CoffeeConsumption>0.4</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Diószegi Márk</Name>
+    <Coding>6</Coding>
+    <Gaming>4</Gaming>
+    <SoftSkills>6</SoftSkills>
+    <CoffeeConsumption>0.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Jakab István János</Name>
+    <Coding>8</Coding>
+    <Gaming>3</Gaming>
+    <SoftSkills>7</SoftSkills>
+    <CoffeeConsumption>1.0</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Fehér Attila</Name>
+    <Coding>9</Coding>
+    <Gaming>6</Gaming>
+    <SoftSkills>3</SoftSkills>
+    <CoffeeConsumption>0.9</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Ferenczi Viktor</Name>
+    <Coding>5</Coding>
+    <Gaming>7</Gaming>
+    <SoftSkills>6</SoftSkills>
+    <CoffeeConsumption>0.7</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Jármy Zoltán</Name>
+    <Coding>5</Coding>
+    <Gaming>2</Gaming>
+    <SoftSkills>8</SoftSkills>
+    <CoffeeConsumption>0.8</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Keresztúri András</Name>
+    <Coding>8</Coding>
+    <Gaming>4</Gaming>
+    <SoftSkills>4</SoftSkills>
+    <CoffeeConsumption>1.4</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Mezei Gergely</Name>
+    <Coding>4</Coding>
+    <Gaming>2</Gaming>
+    <SoftSkills>7</SoftSkills>
+    <CoffeeConsumption>1.2</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Nagy Krisztián</Name>
+    <Coding>6</Coding>
+    <Gaming>3</Gaming>
+    <SoftSkills>7</SoftSkills>
+    <CoffeeConsumption>0.7</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Molnár Milán</Name>
+    <Coding>7</Coding>
+    <Gaming>7</Gaming>
+    <SoftSkills>3</SoftSkills>
+    <CoffeeConsumption>0.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Palásthy István</Name>
+    <Coding>4</Coding>
+    <Gaming>6</Gaming>
+    <SoftSkills>3</SoftSkills>
+    <CoffeeConsumption>0.9</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Szabó Erik</Name>
+    <Coding>3</Coding>
+    <Gaming>3</Gaming>
+    <SoftSkills>7</SoftSkills>
+    <CoffeeConsumption>1.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Szabó István</Name>
+    <Coding>4</Coding>
+    <Gaming>10</Gaming>
+    <SoftSkills>3</SoftSkills>
+    <CoffeeConsumption>0.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Szanyi Sándor</Name>
+    <Coding>3</Coding>
+    <Gaming>8</Gaming>
+    <SoftSkills>4</SoftSkills>
+    <CoffeeConsumption>1.0</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Szobonya Erik</Name>
+    <Coding>7</Coding>
+    <Gaming>8</Gaming>
+    <SoftSkills>2</SoftSkills>
+    <CoffeeConsumption>1.2</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Turcsány Ádám</Name>
+    <Coding>9</Coding>
+    <Gaming>7</Gaming>
+    <SoftSkills>2</SoftSkills>
+    <CoffeeConsumption>1.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Ujházi Viktor</Name>
+    <Coding>9</Coding>
+    <Gaming>2</Gaming>
+    <SoftSkills>8</SoftSkills>
+    <CoffeeConsumption>1.3</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Kohányi Róbert</Name>
+    <Coding>10</Coding>
+    <Gaming>2</Gaming>
+    <SoftSkills>8</SoftSkills>
+    <CoffeeConsumption>0.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Monoczki Pál</Name>
+    <Coding>10</Coding>
+    <Gaming>1</Gaming>
+    <SoftSkills>10</SoftSkills>
+    <CoffeeConsumption>1.5</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Lindi Imre</Name>
+    <Coding>10</Coding>
+    <Gaming>8</Gaming>
+    <SoftSkills>3</SoftSkills>
+    <CoffeeConsumption>0.4</CoffeeConsumption>
+  </Card>
+  <Card>
+    <Name>Pekár Balázs</Name>
+    <Coding>10</Coding>
+    <Gaming>5</Gaming>
+    <SoftSkills>5</SoftSkills>
+    <CoffeeConsumption>0.8</CoffeeConsumption>
+  </Card>
+</Cards>

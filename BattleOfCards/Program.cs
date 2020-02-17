@@ -1,4 +1,5 @@
 ﻿using System;
+using BattleOfCardsAPI;
 
 namespace BattleOfCards
 {
@@ -6,7 +7,12 @@ namespace BattleOfCards
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Initializer initializer = new Initializer();
+            foreach(Card card in initializer.Cards)
+            {
+                Console.WriteLine(card.Name);
+            }
+            Console.ReadLine();
         }
     }
 }
