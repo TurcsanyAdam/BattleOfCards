@@ -9,12 +9,14 @@ namespace BattleOfCardsAPI
         public string Name { get; protected set; }
         public List<Card> Hand { get; private set; }
         public int RoundWins { get; protected set; }
+       
 
         public Player(string Name)
         {
             this.Name = Name;
             Hand = new List<Card>();
             RoundWins = 0;
+           
 
         }
         

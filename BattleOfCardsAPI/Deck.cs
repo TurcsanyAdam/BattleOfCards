@@ -7,7 +7,7 @@ namespace BattleOfCardsAPI
 {
     public class Deck
     {
-        public List<Card> Cards { get; set; }
+        public List<Card> Cards { get; private set; }
         private Random rng; 
         public Deck()
         {
