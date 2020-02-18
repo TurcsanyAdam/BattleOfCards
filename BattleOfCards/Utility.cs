@@ -18,7 +18,7 @@ namespace BattleOfCards
 
         public string GetMenuInput()
         {
-            Console.Clear();
+            //Console.Clear();
             string menu = $"Please choose from the below specifications!\n" +
                             "1. Coding skills\n" +
                             "2. Gaming skills\n" +
@@ -54,12 +54,19 @@ namespace BattleOfCards
             }
         }
 
+
         public void Run()
         {
             GetPlayers();
             theGame = new TheGame(deck);
             theGame.StartTheGame(playerList);
-            theGame.OneRound(GetMenuInput(), playerList);
+            while (!theGame.CheckLoser(playerList))
+            {
+                Console.WriteLine(playerList[0].Hand.Count);
+                Console.WriteLine(playerList[1].Hand.Count);
+                theGame.OneRound(GetMenuInput(), playerList);
+            }
+            Console.WriteLine(theGame.GetWinner(playerList).Name ); 
         }
     }
 }

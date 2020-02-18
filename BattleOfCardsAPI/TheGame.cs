@@ -23,6 +23,32 @@ namespace BattleOfCardsAPI
         {
             deck.ShuffleAndDeal(playerList);
         }
+
+        public bool CheckLoser(List<Player> playerList)
+        {
+            foreach(Player player in playerList)
+            {
+                if(player.Hand.Count == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public Player GetWinner(List<Player> playerList)
+        {
+            int maxCards = 0;
+            Player winner = null;
+            foreach (Player player in playerList)
+            {
+                if (player.Hand.Count > maxCards)
+                {
+                    maxCards = player.Hand.Count;
+                    winner = player;
+                }
+            }
+            return winner;
+        }
         
         public void OneRound(string theChosenSpecification,List<Player> playerList)
         {
@@ -88,6 +114,7 @@ namespace BattleOfCardsAPI
                     {
                         player.Hand.AddRange(ChoosenCards);
                         player.Hand.AddRange(DrawRound);
+                        DrawRound.Clear();
                         
 
                     }
