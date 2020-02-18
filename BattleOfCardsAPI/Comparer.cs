@@ -7,57 +7,53 @@ namespace BattleOfCardsAPI
 {
     class Comparer
     {
-        public class SortCodingDescending : IComparer
+        public class SortCodingDescending : IComparer<Card>
         {
-           int IComparer.Compare(object card1, object card2)
+           int IComparer<Card>.Compare(Card card1, Card card2)
             {
-                Card c1 = (Card)card1;
-                Card c2 = (Card)card2;
-                if (c1.Coding < c2.Coding)
+                
+                if (card1.Coding < card2.Coding)
                     return 1;
-                if (c1.Coding > c2.Coding)
+                if (card1.Coding > card2.Coding)
                     return -1;
                 else
                     return 0;
             }
         }
-        public class SortGamingDescending : IComparer
+        public class SortGamingDescending : IComparer<Card>
         {
-            int IComparer.Compare(object card1, object card2)
+            int IComparer<Card>.Compare(Card card1, Card card2)
             {
-                Card c1 = (Card)card1;
-                Card c2 = (Card)card2;
-                if (c1.Gaming < c2.Gaming)
+                
+                if (card1.Gaming < card2.Gaming)
                     return 1;
-                if (c1.Gaming > c2.Gaming)
+                if (card1.Gaming > card2.Gaming)
                     return -1;
                 else
                     return 0;
             }
         }
-        public class SortSoftSkillDescending : IComparer
+        public class SortSoftSkillDescending : IComparer<Card>
         {
-            int IComparer.Compare(object card1, object card2)
+            int IComparer<Card>.Compare(Card card1, Card card2)
             {
-                Card c1 = (Card)card1;
-                Card c2 = (Card)card2;
-                if (c1.SoftSkills < c2.SoftSkills)
+                
+                if (card1.SoftSkills < card2.SoftSkills)
                     return 1;
-                if (c1.SoftSkills > c2.SoftSkills)
+                if (card1.SoftSkills > card2.SoftSkills)
                     return -1;
                 else
                     return 0;
             }
         }
-        public class SortCoffeeConsuptionAscending : IComparer
+        public class SortCoffeeConsuptionAscending : IComparer<Card>
         {
-            int IComparer.Compare(object card1, object card2)
+            int IComparer<Card>.Compare(Card card1, Card card2)
             {
-                Card c1 = (Card)card1;
-                Card c2 = (Card)card2;
-                if (c1.CoffeeConsumption < c2.CoffeeConsumption)
+               
+                if (card1.CoffeeConsumption < card2.CoffeeConsumption)
                     return 1;
-                if (c1.CoffeeConsumption < c2.CoffeeConsumption)
+                if (card1.CoffeeConsumption < card2.CoffeeConsumption)
                     return -1;
                 else
                     return 0;
