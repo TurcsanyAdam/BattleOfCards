@@ -8,12 +8,14 @@ namespace BattleOfCardsAPI
     {
         public Deck deck;
         public List<Card> ChoosenCards { get; private set; }
+        public List<Card> DrawRound { get; private set; }
         
 
-        public TheGame(Deck deck, Comparer Comparer)
+        public TheGame(Deck deck)
         {
             this.deck = deck;
             ChoosenCards = new List<Card>();
+            DrawRound = new List<Card>();
             
         }
 
@@ -30,8 +32,9 @@ namespace BattleOfCardsAPI
             }
             if(theChosenSpecification ==  "1")
             {
-                ChoosenCards.Sort(SortCodingDescending)
+                ChoosenCards.Sort(new Comparer.SortCodingDescending());
             }
+            
         }
        
     }
