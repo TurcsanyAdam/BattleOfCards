@@ -17,7 +17,7 @@ namespace BattleOfCardsAPI
             RoundWins = 0;
 
         }
-        public abstract string ChooseTheSpecification();
+        
         
         public void AddCardToTheHand(Card card)
         {

@@ -31,24 +31,7 @@ namespace BattleOfCards
 
             }
 
-            int maxCards = deck.Cards.Count / playerList.Count;
-            bool maxCardsReached = true;
-            while (maxCardsReached)
-            {
-                foreach (Player player1 in playerList)
-                {
-                    if (player1.Hand.Count != maxCards)
-                    {
-                        int randomCard = rand.Next(0, deck.Cards.Count - 1);
-                        player1.AddCardToTheHand(deck.Cards[randomCard]);
-                        deck.Cards.RemoveAt(randomCard);
-                    }
-                    else
-                    {
-                        maxCardsReached = false;
-                    }
-                }
-            }
+            deck.ShuffleAndDeal(playerList);
 
             Console.ReadLine();
         }

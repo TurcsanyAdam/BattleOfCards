@@ -12,10 +12,7 @@ namespace BattleOfCardsAPI
             
         }
 
-        public override string ChooseTheSpecification()
-        {
-            return "return";
-        }
+       
 
     }
 }
