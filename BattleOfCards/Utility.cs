@@ -18,7 +18,6 @@ namespace BattleOfCards
 
         public string GetMenuInput()
         {
-            //Console.Clear();
             string menu = $"Please choose from the below specifications!\n" +
                             "1. Coding skills\n" +
                             "2. Gaming skills\n" +
@@ -27,23 +26,38 @@ namespace BattleOfCards
 
             Console.WriteLine(menu);
             string result = Console.ReadLine();
+            switch (result)
+            {
+                case "1":
+                    Console.WriteLine("Chosen stat is \"Coding Skills\"");
+                    break;
+                case "2":
+                    Console.WriteLine("Chosen stat is \"Gaming Skills\"");
+                    break;
+                case "3":
+                    Console.WriteLine("Chosen stat is \"Soft Skills\"");
+                    break;
+                case "4":
+                    Console.WriteLine("Chosen stat is \"Coffee consumptio\"");
+                    break;
+            }
             return result;
 
         }
 
         public void GetPlayers()
         {
-            Console.Write("How many players would you like?");
+            Console.Write("How many players would you like? ");
             int numberOfPlayers = int.Parse(Console.ReadLine());
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Console.Write("Whats your username?");
+                Console.Write("Whats your username? ");
                 string username = Console.ReadLine();
                 HumanPlayer player = new HumanPlayer(username);
                 playerList.Add(player);
 
             }
-            Console.Write("How many bots would you like?");
+            Console.Write("How many bots would you like? ");
             int numberOfBots = int.Parse(Console.ReadLine());
             for (int i = 0; i < numberOfBots; i++)
             {
