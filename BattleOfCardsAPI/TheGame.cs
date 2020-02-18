@@ -6,5 +6,6 @@ namespace BattleOfCardsAPI
 {
     class TheGame
     {
+
     }
 }

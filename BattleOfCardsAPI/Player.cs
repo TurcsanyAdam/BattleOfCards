@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BattleOfCardsAPI
 {
-    abstract class Player
+    public abstract class Player
     {
         public string Name { get; protected set; }
         public List<Card> Hand { get; private set; }

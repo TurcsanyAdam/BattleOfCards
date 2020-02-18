@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BattleOfCardsAPI
 {
-    class ComputerPlayer : Player
+    public class ComputerPlayer : Player
     {
 
         public ComputerPlayer(string Name ) : base(Name)
