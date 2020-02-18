@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace BattleOfCardsAPI
 {
-    class Comparer 
+    public class Comparer 
     {
         public class SortCodingDescending : IComparer<Card>
         {

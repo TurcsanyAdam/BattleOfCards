@@ -10,8 +10,6 @@ namespace BattleOfCards
         List<Player> playerList;
         Deck deck;
         TheGame theGame;
-        Comparer comparer;
-
         public Utility()
         {
             playerList = new List<Player>();
@@ -59,7 +57,7 @@ namespace BattleOfCards
         public void Run()
         {
             GetPlayers();
-            theGame = new TheGame(deck, comparer);
+            theGame = new TheGame(deck);
             theGame.StartTheGame(playerList);
             theGame.OneRound(GetMenuInput(), playerList);
         }

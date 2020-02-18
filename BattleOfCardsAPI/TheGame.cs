@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BattleOfCardsAPI
 {
-    class TheGame
+    public class TheGame
     {
         public Deck deck;
         public List<Card> ChoosenCards { get; private set; }
@@ -33,9 +33,78 @@ namespace BattleOfCardsAPI
             if(theChosenSpecification ==  "1")
             {
                 ChoosenCards.Sort(new Comparer.SortCodingDescending());
+                if(ChoosenCards[0].Coding == ChoosenCards[1].Coding)
+                {
+                    foreach(Card card in ChoosenCards)
+                    {
+                        DrawRound.Add(card);
+                    }
+                    ChoosenCards.Clear();
+                }
+
             }
-            
+            else if (theChosenSpecification == "2")
+            {
+                ChoosenCards.Sort(new Comparer.SortGamingDescending());
+                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
+                {
+                    foreach (Card card in ChoosenCards)
+                    {
+                        DrawRound.Add(card);
+                    }
+                    ChoosenCards.Clear();
+                }
+            }
+            else if (theChosenSpecification == "3")
+            {
+                ChoosenCards.Sort(new Comparer.SortSoftSkillDescending());
+                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
+                {
+                    foreach (Card card in ChoosenCards)
+                    {
+                        DrawRound.Add(card);
+                    }
+                    ChoosenCards.Clear();
+                }
+            }
+            else if (theChosenSpecification == "4")
+            {
+                ChoosenCards.Sort(new Comparer.SortCoffeeConsuptionAscending());
+                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
+                {
+                    foreach (Card card in ChoosenCards)
+                    {
+                        DrawRound.Add(card);
+                    }
+                    ChoosenCards.Clear();
+                }
+            }
+            if(ChoosenCards.Count > 0 && DrawRound.Count > 0)
+            {
+                foreach(Player player in playerList)
+                {
+                    if (player.Hand.Contains(ChoosenCards[0]))
+                    {
+                        player.Hand.AddRange(ChoosenCards);
+                        player.Hand.AddRange(DrawRound);
+
+                    }
+                }
+            }
+            else if (ChoosenCards.Count > 0 && DrawRound.Count == 0))
+            {
+                foreach (Player player in playerList)
+                {
+                    if (player.Hand.Contains(ChoosenCards[0]))
+                    {
+                        player.Hand.AddRange(ChoosenCards);
+
+                    }
+                }
+            }
+            "hello";
+
         }
-       
+
     }
 }
