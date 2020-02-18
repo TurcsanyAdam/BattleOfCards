@@ -13,7 +13,13 @@ namespace BattleOfCardsAPI
             this.deck = deck;
         }
 
-        
+        public void Run(List<Player> playerList)
+        {
+            while (true)
+            {
+
+            }
+        }
 
        
     }
