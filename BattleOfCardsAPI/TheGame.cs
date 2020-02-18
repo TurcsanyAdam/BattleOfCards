@@ -122,6 +122,7 @@ namespace BattleOfCardsAPI
 
 
                 }
+                ChoosenCards.Clear();
             }
             else if (ChoosenCards.Count > 0 && DrawRound.Count == 0)
             {
@@ -134,6 +135,7 @@ namespace BattleOfCardsAPI
                     }
                     player.Hand.RemoveAt(0);
                 }
+                ChoosenCards.Clear();
             }
             else if(ChoosenCards.Count == 0 && DrawRound.Count > 0)
             {
