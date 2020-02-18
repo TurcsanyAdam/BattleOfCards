@@ -59,57 +59,41 @@ namespace BattleOfCardsAPI
         
         public void OneRound(string theChosenSpecification,List<Player> playerList)
         {
-            
-            if(theChosenSpecification ==  "1")
-            {
-                ChoosenCards.Sort(new Comparer.SortCodingDescending());
-                if(ChoosenCards[0].Coding == ChoosenCards[1].Coding)
-                {
-                    foreach(Card card in ChoosenCards)
-                    {
-                        DrawRound.Add(card);
-                    }
-                    ChoosenCards.Clear();
-                }
 
+            IComparer<Card> comparer;
+            if (theChosenSpecification == "1")
+            {
+                comparer = new Comparer.SortCodingDescending();
             }
+     
             else if (theChosenSpecification == "2")
             {
-                ChoosenCards.Sort(new Comparer.SortGamingDescending());
-                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
-                {
-                    foreach (Card card in ChoosenCards)
-                    {
-                        DrawRound.Add(card);
-                    }
-                    ChoosenCards.Clear();
-                }
+                comparer = new Comparer.SortGamingDescending();
             }
+            
             else if (theChosenSpecification == "3")
             {
-                ChoosenCards.Sort(new Comparer.SortSoftSkillDescending());
-                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
-                {
-                    foreach (Card card in ChoosenCards)
-                    {
-                        DrawRound.Add(card);
-                    }
-                    ChoosenCards.Clear();
-                }
+                comparer = new Comparer.SortSoftSkillDescending();
             }
-            else if (theChosenSpecification == "4")
+            else
             {
-                ChoosenCards.Sort(new Comparer.SortCoffeeConsuptionAscending());
-                if (ChoosenCards[0].Gaming == ChoosenCards[1].Gaming)
-                {
-                    foreach (Card card in ChoosenCards)
-                    {
-                        DrawRound.Add(card);
-                    }
-                    ChoosenCards.Clear();
-                    
-                }
+                comparer = new Comparer.SortCoffeeConsuptionAscending();
             }
+
+            ChoosenCards.Sort(comparer);
+            if (comparer.Compare(ChoosenCards[0], ChoosenCards[1]) == 0  )
+            {
+                foreach (Card card in ChoosenCards)
+                {
+                    DrawRound.Add(card);
+                }
+                ChoosenCards.Clear();
+            }
+
+            
+
+        
+
             if(ChoosenCards.Count > 0 && DrawRound.Count > 0)
             {
                 foreach(Player player in playerList)

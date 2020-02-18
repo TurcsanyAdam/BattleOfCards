@@ -11,5 +11,10 @@ namespace BattleOfCardsAPI
         {
 
         }
+
+        public override string ChooseAttribute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
