@@ -49,13 +49,17 @@ namespace BattleOfCardsAPI
             }
             return winner;
         }
-        
-        public void OneRound(string theChosenSpecification,List<Player> playerList)
+        public void GetChoosenCards(List<Player> playerList)
         {
-            foreach(Player player in playerList)
+            foreach (Player player in playerList)
             {
                 ChoosenCards.Add(player.Hand[0]);
             }
+        }
+        
+        public void OneRound(string theChosenSpecification,List<Player> playerList)
+        {
+            
             if(theChosenSpecification ==  "1")
             {
                 ChoosenCards.Sort(new Comparer.SortCodingDescending());

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Runtime.Serialization;
 
 
@@ -47,5 +48,13 @@ namespace BattleOfCardsAPI
             SoftSkills = (int)info.GetValue("SoftSkills", typeof(int));
             CoffeeConsumption = (double)info.GetValue("CoffeeConsumption", typeof(double));
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"Name : {Name},Coding skill : {Coding},Gaming skill : {Gaming},Soft Skills : {SoftSkills}, Coffee Consuption : {CoffeeConsumption}");
+            return sb.ToString();
+        }
     }
+    
 }

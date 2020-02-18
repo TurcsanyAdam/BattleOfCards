@@ -62,8 +62,12 @@ namespace BattleOfCards
             theGame.StartTheGame(playerList);
             while (!theGame.CheckLoser(playerList))
             {
-                Console.WriteLine(playerList[0].Hand.Count);
-                Console.WriteLine(playerList[1].Hand.Count);
+
+                theGame.GetChoosenCards(playerList);
+                foreach(Card card in theGame.ChoosenCards)
+                {
+                    Console.WriteLine(card.ToString());
+                }
                 theGame.OneRound(GetMenuInput(), playerList);
             }
             Console.WriteLine(theGame.GetWinner(playerList).Name ); 
