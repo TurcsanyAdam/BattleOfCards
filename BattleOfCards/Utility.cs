@@ -7,7 +7,7 @@ namespace BattleOfCards
 {
     public class Utility
     {
-        public int GetMenuInput()
+        public string GetMenuInput()
         {
             Console.Clear();
             string menu = $"Please choose from the below specifications!\n" +
@@ -17,7 +17,7 @@ namespace BattleOfCards
                             "4. Coffee consumption";
 
             Console.WriteLine(menu);
-            int result = int.Parse(Console.ReadLine());
+            string result = Console.ReadLine();
             return result;
 
         }
