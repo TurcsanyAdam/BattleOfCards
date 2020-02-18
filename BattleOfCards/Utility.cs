@@ -7,6 +7,17 @@ namespace BattleOfCards
 {
     public class Utility
     {
+        List<Player> playerList;
+        Deck deck;
+        TheGame theGame;
+        Comparer comparer;
+
+        public Utility()
+        {
+            playerList = new List<Player>();
+            deck = new Deck();            
+        }
+
         public string GetMenuInput()
         {
             Console.Clear();
@@ -22,10 +33,8 @@ namespace BattleOfCards
 
         }
 
-        public List<Player> GetPlayers()
+        public void GetPlayers()
         {
-            List<Player> playerList = new List<Player>();
-
             Console.Write("How many players would you like?");
             int numberOfPlayers = int.Parse(Console.ReadLine());
             for (int i = 0; i < numberOfPlayers; i++)
@@ -45,7 +54,14 @@ namespace BattleOfCards
                 playerList.Add(player);
 
             }
-            return playerList;
+        }
+
+        public void Run()
+        {
+            GetPlayers();
+            theGame = new TheGame(deck, comparer);
+            theGame.StartTheGame(playerList);
+            theGame.OneRound(GetMenuInput(), playerList);
         }
     }
 }

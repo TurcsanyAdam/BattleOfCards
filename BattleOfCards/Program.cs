@@ -9,7 +9,7 @@ namespace BattleOfCards
         static void Main(string[] args)
         {
             Utility utility = new Utility();
-            
+            utility.Run();
         }
 
     }
