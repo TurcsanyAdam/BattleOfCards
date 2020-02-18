@@ -77,6 +77,7 @@ namespace BattleOfCardsAPI
                         DrawRound.Add(card);
                     }
                     ChoosenCards.Clear();
+                    
                 }
             }
             if(ChoosenCards.Count > 0 && DrawRound.Count > 0)
@@ -87,11 +88,15 @@ namespace BattleOfCardsAPI
                     {
                         player.Hand.AddRange(ChoosenCards);
                         player.Hand.AddRange(DrawRound);
+                        
 
                     }
+                    player.Hand.RemoveAt(0);
+
+
                 }
             }
-            else if (ChoosenCards.Count > 0 && DrawRound.Count == 0))
+            else if (ChoosenCards.Count > 0 && DrawRound.Count == 0)
             {
                 foreach (Player player in playerList)
                 {
@@ -100,10 +105,17 @@ namespace BattleOfCardsAPI
                         player.Hand.AddRange(ChoosenCards);
 
                     }
+                    player.Hand.RemoveAt(0);
                 }
             }
-            "hello";
-
+            else if(ChoosenCards.Count == 0 && DrawRound.Count > 0)
+            {
+                foreach (Player player in playerList)
+                {
+                    player.Hand.RemoveAt(0);
+                }
+            }
+            
         }
 
     }
