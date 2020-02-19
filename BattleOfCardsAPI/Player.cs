@@ -6,21 +6,30 @@ namespace BattleOfCardsAPI
 {
     public abstract class Player
     {
-        public string Name { get; protected set; }
-        public List<Card> Hand { get; private set; }
-        public int RoundWins { get; protected set; }
+       public enum Attributes
+        {
+            Coding,
+            Gaming,
+            SoftSkills,
+            CoffeeConsuption,
+
+        }
+
+        public string Name {  get; protected internal set; }
+        public List<Card> Hand { get; protected internal set; }
+        public bool Iswinner { get; protected internal set; }
        
 
         public Player(string Name)
         {
             this.Name = Name;
             Hand = new List<Card>();
-            RoundWins = 0;
+            Iswinner = false;
            
 
         }
 
-        public abstract Attribute ChooseAttribute();
+        public abstract Attributes ChooseAttribute();
         
         public void AddCardToTheHand(Card card)
         {

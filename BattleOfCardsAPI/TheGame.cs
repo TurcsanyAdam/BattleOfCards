@@ -56,38 +56,76 @@ namespace BattleOfCardsAPI
                 ChoosenCards.Add(player.Hand[0]);
             }
         }
-        
-        public void OneRound(string theChosenSpecification,List<Player> playerList)
+        public Player LastRoundWinner(List<Player> playerList)
         {
+            if (playerList.Count > 0)
+            {
+                foreach (Player player in playerList)
+                {
+                    if (player.Iswinner == true)
+                    {
+                        return player;
+                    }
 
+
+                }
+                
+            }
+            throw new NullReferenceException("there is no such player");
+        }
+        
+        public void OneRound(List<Player> playerList,int round)
+        {
+            Player startingPlayer;
+            if(round > 0)
+            {
+                startingPlayer = LastRoundWinner(playerList);
+            }
+            else 
+            {
+                startingPlayer = playerList[0];
+            }
+            
             IComparer<Card> comparer;
-            if (theChosenSpecification == "1")
+            string answer = Convert.ToString(startingPlayer.ChooseAttribute()).ToLower();
+            if (answer == "coding")
             {
                 comparer = new Comparer.SortCodingDescending();
             }
      
-            else if (theChosenSpecification == "2")
+            else if (answer == "gaming")
             {
                 comparer = new Comparer.SortGamingDescending();
             }
             
-            else if (theChosenSpecification == "3")
+            else if (answer == "softskills")
             {
                 comparer = new Comparer.SortSoftSkillDescending();
             }
-            else
+            else 
             {
                 comparer = new Comparer.SortCoffeeConsuptionAscending();
             }
+            
 
             ChoosenCards.Sort(comparer);
             if (comparer.Compare(ChoosenCards[0], ChoosenCards[1]) == 0  )
             {
+                if(round == 0)
+                {
+                    startingPlayer.Iswinner = true;
+                }
                 foreach (Card card in ChoosenCards)
                 {
                     DrawRound.Add(card);
+                    
+                }
+                foreach (Player player in playerList)
+                {
+                    player.Hand.RemoveAt(0);
                 }
                 ChoosenCards.Clear();
+                return;
             }
 
             
@@ -100,12 +138,15 @@ namespace BattleOfCardsAPI
                 {
                     if (player.Hand.Contains(ChoosenCards[0]))
                     {
+                        player.Iswinner = true;
                         player.Hand.AddRange(ChoosenCards);
                         player.Hand.AddRange(DrawRound);
                         DrawRound.Clear();
-                        
+
 
                     }
+                    else
+                        player.Iswinner = false;
                     player.Hand.RemoveAt(0);
 
 
@@ -118,9 +159,12 @@ namespace BattleOfCardsAPI
                 {
                     if (player.Hand.Contains(ChoosenCards[0]))
                     {
+                        player.Iswinner = true;
                         player.Hand.AddRange(ChoosenCards);
 
                     }
+                    else
+                        player.Iswinner = false;
                     player.Hand.RemoveAt(0);
                 }
                 ChoosenCards.Clear();
@@ -132,6 +176,7 @@ namespace BattleOfCardsAPI
                     player.Hand.RemoveAt(0);
                 }
             }
+            
             
         }
 

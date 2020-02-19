@@ -53,7 +53,7 @@ namespace BattleOfCards
             {
                 Console.Write("Whats your username? ");
                 string username = Console.ReadLine();
-                HumanPlayer player = new HumanPlayer(username);
+                ConsoleHumanPlayer player = new ConsoleHumanPlayer(username);
                 playerList.Add(player);
 
             }
@@ -74,17 +74,15 @@ namespace BattleOfCards
             GetPlayers();
             theGame = new TheGame(deck);
             theGame.StartTheGame(playerList);
+            int round = 0;
             while (!theGame.CheckLoser(playerList))
             {
 
                 theGame.GetChoosenCards(playerList);
-                foreach(Card card in theGame.ChoosenCards)
-                {
-                    Console.WriteLine(card.ToString());
-                }
-                Player player;
-                player.ChooseAttribute();
-                theGame.OneRound(GetMenuInput(), playerList);
+                
+                
+                theGame.OneRound(playerList,round);
+                round++;
             }
             Console.WriteLine(theGame.GetWinner(playerList).Name ); 
         }
