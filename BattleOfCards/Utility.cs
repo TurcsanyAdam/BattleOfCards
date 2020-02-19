@@ -82,6 +82,8 @@ namespace BattleOfCards
                 {
                     Console.WriteLine(card.ToString());
                 }
+                Player player;
+                player.ChooseAttribute();
                 theGame.OneRound(GetMenuInput(), playerList);
             }
             Console.WriteLine(theGame.GetWinner(playerList).Name ); 

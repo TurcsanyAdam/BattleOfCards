@@ -19,7 +19,8 @@ namespace BattleOfCardsAPI
            
 
         }
-        
+
+        public abstract Attribute ChooseAttribute();
         
         public void AddCardToTheHand(Card card)
         {
