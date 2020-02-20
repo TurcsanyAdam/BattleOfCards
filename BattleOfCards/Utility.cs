@@ -33,23 +33,24 @@ namespace BattleOfCards
             for (int i = 0; i < numberOfBots; i++)
             {
                 string botName = $"Bot {i}";
-                ComputerPlayer player = new ComputerPlayer(botName);
+                ConsoleComputerPlayer player = new ConsoleComputerPlayer(botName);
                 playerList.Add(player);
 
             }
 
             Console.WriteLine("\nAll players set!");
         }
-        public void ShowCards(List<Card> cards)
+        public void ShowCards(List<Card> cards,List<Player> playerList)
         {
-            foreach(Card card in cards)
+            for(int i = 0; i < cards.Count; i++)
             {
-                Console.WriteLine(card.ToString());
+                Console.WriteLine($"{playerList[i].Name}'s card : {cards[i].ToString()}");
             }
         }
 
         public void Run()
         {
+            
             GetPlayers();
 
             Console.WriteLine("\nShuffling deck...");
@@ -60,20 +61,26 @@ namespace BattleOfCards
             int round = 0;
             while (!theGame.CheckLoser(playerList))
             {
-
+                
                 List<Card> OneRoundCard = theGame.GetChoosenCards(playerList);
                 
                 
                 theGame.OneRound(playerList,round);
-                ShowCards(OneRoundCard);
-                foreach(Player player in playerList)
+                ShowCards(OneRoundCard,playerList);
+                
+                Player roundWinner = theGame.LastRoundWinner(playerList);
+                
+                Console.WriteLine($"You won { roundWinner.Name}!");
+                Console.WriteLine();
+                foreach (Player player in playerList)
                 {
                     Console.WriteLine($"{player.Name} You have {player.Hand.Count} Card(s)");
                 }
-                Player roundWinner = theGame.LastRoundWinner(playerList);
-                Console.WriteLine($"You won { roundWinner.Name}!");
+                Console.WriteLine();
                 round++;
+                
             }
+            Console.WriteLine();
             Console.WriteLine(theGame.GetWinner(playerList).Name ); 
         }
     }

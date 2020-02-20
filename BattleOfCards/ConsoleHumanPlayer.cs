@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-
 using BattleOfCardsAPI;
 
 namespace BattleOfCards
@@ -23,7 +21,7 @@ namespace BattleOfCards
                             "(CoffeeConsuption)Coffee consumption";
 
             Console.WriteLine(menu);
-            Console.WriteLine($"Your first cars is {Hand[0].ToString()}");
+            Console.WriteLine($"Your first card is {Hand[0].ToString()}");
             string menuAnswer = Console.ReadLine();
             Attributes answer = (Attributes)Enum.Parse(typeof(Attributes), menuAnswer, true);
             Console.WriteLine($"Your chosen stat is {menuAnswer}");

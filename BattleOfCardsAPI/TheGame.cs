@@ -179,6 +179,7 @@ namespace BattleOfCardsAPI
                     player.Hand.RemoveAt(0);
                 }
             }
+            Console.Clear();
             
             
         }
