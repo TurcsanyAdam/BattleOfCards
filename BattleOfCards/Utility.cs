@@ -13,13 +13,26 @@ namespace BattleOfCards
         public Utility()
         {
             playerList = new List<Player>();
-            deck = new Deck();            
+            deck = new Deck();
+            Console.WriteLine($"Considering deck size, max players = {deck.Cards.Count}");
         }
 
         public void GetPlayers()
         {
-            Console.Write("How many players would you like? ");
-            int numberOfPlayers = int.Parse(Console.ReadLine());
+            int numberOfPlayers;
+            bool checkPlayer;
+
+            do
+            {
+                Console.Write("How many players would you like? ");
+                checkPlayer = int.TryParse(Console.ReadLine(), out numberOfPlayers);
+            }
+            while (!checkPlayer);
+            if(numberOfPlayers > deck.Cards.Count)
+            {
+                throw new TooManyPlayersException();
+            }
+
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 Console.Write("Whats your username? ");
@@ -28,8 +41,20 @@ namespace BattleOfCards
                 playerList.Add(player);
 
             }
-            Console.Write("How many bots would you like? ");
-            int numberOfBots = int.Parse(Console.ReadLine());
+            int numberOfBots;
+            bool checkBot;
+
+            do
+            {
+                Console.Write("How many bots would you like? ");
+                checkBot = int.TryParse(Console.ReadLine(), out numberOfBots);
+            }
+            while (!checkBot);
+            if (numberOfBots+playerList.Count > deck.Cards.Count)
+            {
+                throw new TooManyPlayersException();
+            }
+
             for (int i = 0; i < numberOfBots; i++)
             {
                 string botName = $"Bot {i}";
@@ -64,7 +89,12 @@ namespace BattleOfCards
                 
                 List<Card> OneRoundCard = theGame.GetChoosenCards(playerList);
 
-                
+                foreach (Player player in playerList)
+                {
+                    Console.WriteLine($"{player.Name} You have {player.Hand.Count} Card(s)");
+                }
+                Console.WriteLine();
+
                 theGame.OneRound(playerList,round);
                 ShowCards(OneRoundCard,playerList);
                 
@@ -72,11 +102,7 @@ namespace BattleOfCards
                 
                 Console.WriteLine($"You won { roundWinner.Name}!");
                 Console.WriteLine();
-                foreach (Player player in playerList)
-                {
-                    Console.WriteLine($"{player.Name} You have {player.Hand.Count} Card(s)");
-                }
-                Console.WriteLine();
+
                 round++;
                 
             }
