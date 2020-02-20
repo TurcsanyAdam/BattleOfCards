@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BattleOfCardsAPI;
+using System.Threading;
 
 namespace BattleOfCards
 {
@@ -10,7 +11,7 @@ namespace BattleOfCards
         Random rng;
         public ConsoleComputerPlayer(string Name) : base(Name)
         {
-            Random rng = new Random();
+            rng = new Random();
         }
 
         public override Attributes ChooseAttribute()
@@ -19,14 +20,14 @@ namespace BattleOfCards
                                                                               { 2, "Gaming"},
                                                                               { 3, "SoftSkills" },
                                                                               { 4, "CoffeeConsuption"} };
-            int randomMenu = rng.Next(0, botMenu.Count - 1);
+            int randomMenu = rng.Next(1, botMenu.Count - 1);
 
-
+            Thread.Sleep(1000);
             Console.WriteLine($"The bot({Name}),choosen the {botMenu[randomMenu]}");
             Console.WriteLine($"The bot({Name})'s first card is {Hand[0].ToString()}");
-            
-            Attributes answer = (Attributes)Enum.Parse(typeof(Attributes), menuAnswer, true);
-            Console.WriteLine($"Your chosen stat is {menuAnswer}");
+            Thread.Sleep(2000);
+            Attributes answer = (Attributes)Enum.Parse(typeof(Attributes), botMenu[randomMenu], true);
+           
             return answer;
         }
     }

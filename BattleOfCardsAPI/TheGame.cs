@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace BattleOfCardsAPI
 {
@@ -128,6 +129,8 @@ namespace BattleOfCardsAPI
                     player.Hand.RemoveAt(0);
                 }
                 ChoosenCards.Clear();
+                Thread.Sleep(2000);
+                Console.Clear();
                 return;
             }
 
@@ -179,6 +182,7 @@ namespace BattleOfCardsAPI
                     player.Hand.RemoveAt(0);
                 }
             }
+            Thread.Sleep(2000);
             Console.Clear();
             
             

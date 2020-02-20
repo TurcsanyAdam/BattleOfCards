@@ -63,7 +63,7 @@ namespace BattleOfCards
             {
                 
                 List<Card> OneRoundCard = theGame.GetChoosenCards(playerList);
-                
+
                 
                 theGame.OneRound(playerList,round);
                 ShowCards(OneRoundCard,playerList);
