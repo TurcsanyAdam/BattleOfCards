@@ -16,35 +16,6 @@ namespace BattleOfCards
             deck = new Deck();            
         }
 
-        public string GetMenuInput()
-        {
-            string menu = $"Please choose from the below specifications!\n" +
-                            "1. Coding skills\n" +
-                            "2. Gaming skills\n" +
-                            "3. Soft skills\n" +
-                            "4. Coffee consumption";
-
-            Console.WriteLine(menu);
-            string result = Console.ReadLine();
-            switch (result)
-            {
-                case "1":
-                    Console.WriteLine("Chosen stat is \"Coding Skills\"");
-                    break;
-                case "2":
-                    Console.WriteLine("Chosen stat is \"Gaming Skills\"");
-                    break;
-                case "3":
-                    Console.WriteLine("Chosen stat is \"Soft Skills\"");
-                    break;
-                case "4":
-                    Console.WriteLine("Chosen stat is \"Coffee consumptio\"");
-                    break;
-            }
-            return result;
-
-        }
-
         public void GetPlayers()
         {
             Console.Write("How many players would you like? ");
@@ -66,6 +37,8 @@ namespace BattleOfCards
                 playerList.Add(player);
 
             }
+
+            Console.WriteLine("\nAll players set!");
         }
         public void ShowCards(List<Card> cards)
         {
@@ -78,8 +51,12 @@ namespace BattleOfCards
         public void Run()
         {
             GetPlayers();
+
+            Console.WriteLine("\nShuffling deck...");
             theGame = new TheGame(deck);
             theGame.StartTheGame(playerList);
+            Console.WriteLine("Deck shuffled!\n");
+
             int round = 0;
             while (!theGame.CheckLoser(playerList))
             {

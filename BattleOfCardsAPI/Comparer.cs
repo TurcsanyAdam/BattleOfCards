@@ -51,7 +51,7 @@ namespace BattleOfCardsAPI
             int IComparer<Card>.Compare(Card card1, Card card2)
             {
                
-                if (card1.CoffeeConsumption < card2.CoffeeConsumption)
+                if (card1.CoffeeConsumption > card2.CoffeeConsumption)
                     return 1;
                 if (card1.CoffeeConsumption < card2.CoffeeConsumption)
                     return -1;

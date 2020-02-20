@@ -90,7 +90,7 @@ namespace BattleOfCardsAPI
             }
             
             IComparer<Card> comparer;
-            string answer = Convert.ToString(startingPlayer.ChooseAttribute()).ToLower();
+            string answer = Convert.ToString(startingPlayer.ChooseAttribute()).ToLower().Trim();
             if (answer == "coding")
             {
                 comparer = new Comparer.SortCodingDescending();
