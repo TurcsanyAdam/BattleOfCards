@@ -49,12 +49,15 @@ namespace BattleOfCardsAPI
             }
             return winner;
         }
-        public void GetChoosenCards(List<Player> playerList)
+        public List<Card> GetChoosenCards(List<Player> playerList)
         {
+            List<Card> ToShowOneRoundCards = new List<Card>(); 
             foreach (Player player in playerList)
             {
                 ChoosenCards.Add(player.Hand[0]);
+                ToShowOneRoundCards.Add(player.Hand[0]);
             }
+            return ToShowOneRoundCards;
         }
         public Player LastRoundWinner(List<Player> playerList)
         {

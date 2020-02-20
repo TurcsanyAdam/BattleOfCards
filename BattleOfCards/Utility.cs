@@ -67,7 +67,13 @@ namespace BattleOfCards
 
             }
         }
-
+        public void ShowCards(List<Card> cards)
+        {
+            foreach(Card card in cards)
+            {
+                Console.WriteLine(card.ToString());
+            }
+        }
 
         public void Run()
         {
@@ -78,10 +84,17 @@ namespace BattleOfCards
             while (!theGame.CheckLoser(playerList))
             {
 
-                theGame.GetChoosenCards(playerList);
+                List<Card> OneRoundCard = theGame.GetChoosenCards(playerList);
                 
                 
                 theGame.OneRound(playerList,round);
+                ShowCards(OneRoundCard);
+                foreach(Player player in playerList)
+                {
+                    Console.WriteLine($"{player.Name} You have {player.Hand.Count} Card(s)");
+                }
+                Player roundWinner = theGame.LastRoundWinner(playerList);
+                Console.WriteLine($"You won { roundWinner.Name}!");
                 round++;
             }
             Console.WriteLine(theGame.GetWinner(playerList).Name ); 
