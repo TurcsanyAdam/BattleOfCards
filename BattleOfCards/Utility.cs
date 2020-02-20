@@ -35,10 +35,28 @@ namespace BattleOfCards
 
             for (int i = 0; i < numberOfPlayers; i++)
             {
+
                 Console.Write("Whats your username? ");
                 string username = Console.ReadLine();
                 ConsoleHumanPlayer player = new ConsoleHumanPlayer(username);
-                playerList.Add(player);
+
+                foreach (Player player1 in playerList)
+                {
+                    if (player1.Name == player.Name)
+                    {
+                        throw new PlayerAlreadyInGameException();
+                    }
+                    else
+                    {
+                        playerList.Add(player);
+                        break;
+                    }
+                }      
+                if(playerList.Count == 0)
+                {
+                    playerList.Add(player);
+
+                }
 
             }
             int numberOfBots;
