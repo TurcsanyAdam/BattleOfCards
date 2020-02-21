@@ -6,11 +6,18 @@ namespace BattleOfCards
 {
     class Program 
     {
-       
         static void Main(string[] args)
         {
-            Utility utility = new Utility();
-            utility.Run();
+            try
+            {
+                Utility utility = new Utility();
+                utility.Run();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
 
 
         }
